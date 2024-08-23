@@ -1,0 +1,529 @@
+views:
+  - title: Home
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: state
+            entity: person.peter
+          - type: custom:bubble-card
+            card_type: button
+            button_type: state
+            entity: person.barbara
+      - type: custom:bubble-card
+        card_type: button
+        card_layout: large
+        button_type: name
+        show_icon: false
+        show_name: false
+        sub_button:
+          - entity: scene.nachtlicht
+            name: NL
+          - name: GN
+            icon: ''
+            entity: scene.gute_nacht
+            show_background: true
+            show_icon: true
+            show_name: false
+            show_state: false
+            show_last_changed: false
+            show_attribute: false
+            tap_action:
+              action: toggle
+          - entity: scene.leselicht
+            name: LL
+            tap_action:
+              action: toggle
+          - entity: scene.fernsehlicht
+            name: TV
+            tap_action:
+              action: toggle
+        styles: |
+          .card-content {
+            width: 100%;
+            margin: 0 !important;
+          }
+
+          .bubble-sub-button {
+            height: 46px !important;
+            width: 46px !important;
+          }
+          .bubble-sub-button-container {
+            width: 100%;
+            justify-content: space-between !important;
+          }
+          .bubble-sub-button-icon {
+            --mdc-icon-size: inherit !important;
+          }
+          .bubble-name-container {
+            margin-right: 0px !important;
+          }
+        scrolling_effect: true
+      - square: false
+        type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: Arbeitszimmer
+            sub_button:
+              - entity: sensor.sensor_arbeitszimmer_humidity
+                name: hum
+                show_background: false
+                show_name: false
+                show_state: true
+              - entity: sensor.sensor_arbeitszimmer_temperature
+                show_background: false
+                show_icon: true
+                show_state: true
+                name: temp
+          - type: custom:bubble-card
+            card_type: button
+            entity: light.licht_arbeitszimmer
+            name: Arbeitszimmer
+            icon: ''
+            show_last_changed: false
+            show_attribute: false
+            sub_button:
+              - entity: light.wandschalter_arbeitszimmer
+                name: Großes Licht
+                icon: mdi:ceiling-light
+                show_background: true
+                tap_action:
+                  action: toggle
+              - entity: light.led
+                name: LED
+                icon: mdi:led-strip-variant
+                tap_action:
+                  action: toggle
+              - entity: light.bibliothek
+                name: Bibliothek
+                icon: mdi:floor-lamp
+                tap_action:
+                  action: toggle
+              - entity: light.regal
+                name: Regal
+                icon: mdi:book-open-variant-outline
+                tap_action:
+                  action: toggle
+            force_icon: false
+            scrolling_effect: true
+            show_icon: true
+            show_state: false
+            card_layout: normal
+            styles: |-
+              .bubble-sub-button {
+                  height: 48px !important;
+                  min-width: 48px !important;
+              }
+            tap_action:
+              action: toggle
+              navigation_path: '#arbeitszimmer'
+            button_action:
+              tap_action:
+                action: toggle
+                navigation_path: '#arbeitszimmer'
+            show_name: false
+        columns: 1
+      - square: false
+        type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: Wohnzimmer
+            sub_button:
+              - entity: sensor.sensor_wohnzimmer_humidity
+                name: hum
+                show_background: false
+                show_name: false
+                show_state: true
+              - entity: sensor.sensor_wohnzimmer_temperature
+                show_background: false
+                show_icon: true
+                show_state: true
+                name: temp
+          - type: custom:bubble-card
+            card_type: button
+            entity: light.licht_wohnzimmer
+            name: Wohnzimmer
+            icon: ''
+            show_last_changed: false
+            show_attribute: false
+            sub_button:
+              - entity: light.wandschalter_wohnzimmer
+                name: Großes Licht
+                icon: mdi:ceiling-light
+                show_background: true
+                tap_action:
+                  action: toggle
+              - entity: light.esstisch
+                icon: mdi:table-chair
+                tap_action:
+                  action: toggle
+                name: Esstisch
+              - entity: light.kuche
+                name: Küche
+                icon: mdi:countertop-outline
+                tap_action:
+                  action: toggle
+                show_background: false
+                show_icon: false
+              - entity: light.bock
+                name: Bock
+                icon: mdi:sheep
+                tap_action:
+                  action: toggle
+              - entity: light.schwein
+                name: Schwein
+                icon: mdi:pig
+                tap_action:
+                  action: toggle
+              - entity: switch.tv_plug_wz
+                name: TV
+                icon: mdi:television-classic
+                tap_action:
+                  action: toggle
+            force_icon: false
+            scrolling_effect: true
+            show_icon: true
+            show_state: false
+            card_layout: normal
+            styles: |-
+              .bubble-sub-button {
+                  height: 48px !important;
+                  min-width: 48px !important;
+              }
+            tap_action:
+              action: toggle
+              navigation_path: '#arbeitszimmer'
+            button_action:
+              tap_action:
+                action: toggle
+                navigation_path: '#arbeitszimmer'
+            show_name: false
+        columns: 1
+      - square: false
+        type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: Schlafzimmer
+            sub_button:
+              - entity: sensor.sensor_schlafzimmer_humidity
+                name: hum
+                show_background: false
+                show_name: false
+                show_state: true
+              - entity: sensor.sensor_schlafzimmer_temperature
+                show_background: false
+                show_icon: true
+                show_state: true
+                name: temp
+          - type: custom:bubble-card
+            card_type: button
+            entity: light.licht_schlafzimmer
+            name: Arbeitszimmer
+            icon: ''
+            show_last_changed: false
+            show_attribute: false
+            sub_button:
+              - entity: light.wandschalter_schlafzimmer
+                name: Großes Licht
+                icon: mdi:ceiling-light
+                show_background: true
+                tap_action:
+                  action: toggle
+              - entity: light.led_bett
+                name: LED
+                icon: mdi:led-strip-variant
+                tap_action:
+                  action: toggle
+              - entity: light.peter
+                name: Peter
+                icon: mdi:sheep
+                tap_action:
+                  action: toggle
+              - entity: light.barbara
+                name: Barbara
+                icon: mdi:pig
+                tap_action:
+                  action: toggle
+              - entity: switch.tv_plug_sz
+                name: Alexa
+                icon: mdi:television-classic
+                tap_action:
+                  action: toggle
+            force_icon: false
+            scrolling_effect: true
+            show_icon: true
+            show_state: false
+            card_layout: normal
+            styles: |-
+              .bubble-sub-button {
+                  height: 48px !important;
+                  min-width: 48px !important;
+              }
+            tap_action:
+              action: toggle
+              navigation_path: '#arbeitszimmer'
+            button_action:
+              tap_action:
+                action: toggle
+                navigation_path: '#arbeitszimmer'
+            show_name: false
+        columns: 1
+      - type: custom:bubble-card
+        card_type: separator
+        sub_button: []
+      - square: false
+        type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            entity: light.licht_kinderzimmer
+            name: Kinderzimmer
+            icon: mdi:ceiling-light-outline
+            show_last_changed: false
+            show_attribute: false
+            sub_button: []
+            scrolling_effect: false
+            show_icon: true
+          - type: custom:bubble-card
+            card_type: button
+            entity: light.licht_badezimmer
+            name: Bad
+            icon: mdi:bathtub-outline
+            show_last_changed: false
+            show_attribute: false
+            sub_button: []
+            force_icon: false
+            scrolling_effect: false
+            show_icon: true
+            show_state: false
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.steckdose_terasse
+            name: Terrasse
+            icon: mdi:robot-mower-outline
+            show_last_changed: false
+            show_attribute: false
+            sub_button: []
+            force_icon: false
+            scrolling_effect: false
+            show_icon: true
+            show_state: false
+        columns: 3
+      - type: custom:bubble-card
+        card_type: separator
+        sub_button: []
+      - square: false
+        type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            name: Fiffi
+            entity: vacuum.fiffi
+            icon: mdi:robot-vacuum
+            show_state: true
+            show_last_changed: false
+            tap_action:
+              action: more-info
+            button_action:
+              tap_action:
+                action: more-info
+            sub_button:
+              - name: Battery
+                icon: mdi:battery
+                show_name: false
+                show_icon: true
+                show_background: false
+                show_attribute: true
+                attribute: battery_level
+              - name: Return to dock
+                icon: mdi:home
+                show_background: true
+                tap_action:
+                  action: call-service
+                  service: vacuum.return_to_base
+                  target:
+                    entity_id: vacuum.fiffi
+              - name: Pause
+                icon: mdi:pause
+                show_background: true
+                tap_action:
+                  action: call-service
+                  service: vacuum.pause
+                  target:
+                    entity_id: vacuum.fiffi
+              - name: Start
+                icon: mdi:play
+                tap_action:
+                  action: call-service
+                  service: vacuum.start
+                  target:
+                    entity_id: vacuum.fiffi
+            styles: >-
+              .bubble-button-card-container {
+                /* Change the background color when the vacuum get an error (optional), more details in the styles template section */
+                background: ${state === 'error' ? 'rgb(200, 80, 40)' : ''} !important;
+              } /* Change the first sub-button battery icon based on the
+              battery_icon attribute, more details in the styles template
+              section */ ${subButtonIcon[0].setAttribute("icon",
+              hass.states['vacuum.fiffi'].attributes.battery_icon)}
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            name: Dobby
+            entity: vacuum.dobby
+            icon: mdi:robot-vacuum
+            show_state: true
+            show_last_changed: false
+            tap_action:
+              action: more-info
+            button_action:
+              tap_action:
+                action: more-info
+            sub_button:
+              - name: Battery
+                icon: mdi:battery
+                show_name: false
+                show_icon: true
+                show_background: false
+                show_attribute: true
+                attribute: battery_level
+              - name: Return to dock
+                icon: mdi:home
+                show_background: true
+                tap_action:
+                  action: call-service
+                  service: vacuum.return_to_base
+                  target:
+                    entity_id: vacuum.dobby
+              - name: Pause
+                icon: mdi:pause
+                show_background: true
+                tap_action:
+                  action: call-service
+                  service: vacuum.pause
+                  target:
+                    entity_id: vacuum.dobby
+              - name: Start
+                icon: mdi:play
+                tap_action:
+                  action: call-service
+                  service: vacuum.start
+                  target:
+                    entity_id: vacuum.dobby
+            styles: >-
+              .bubble-button-card-container {
+                /* Change the background color when the vacuum get an error (optional), more details in the styles template section */
+                background: ${state === 'error' ? 'rgb(200, 80, 40)' : ''} !important;
+              } /* Change the first sub-button battery icon based on the
+              battery_icon attribute, more details in the styles template
+              section */ ${subButtonIcon[0].setAttribute("icon",
+              hass.states['vacuum.dobby'].attributes.battery_icon)}
+        columns: 1
+      - type: custom:bubble-card
+        card_type: separator
+        sub_button: []
+      - type: vertical-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: pop-up
+            hash: '#garten'
+          - type: custom:bubble-card
+            card_type: button
+            entity: input_button.garten_giessen
+            name: Gießen starten
+          - type: custom:bubble-card
+            card_type: separator
+            name: Timer
+          - type: custom:bubble-card
+            card_type: button
+            button_type: slider
+            entity: input_number.gardena_1
+            show_last_changed: false
+            show_attribute: false
+            show_icon: true
+            force_icon: false
+            show_name: true
+            show_state: false
+            name: Timer 1
+            sub_button:
+              - entity: input_number.gardena_1
+                show_background: false
+                show_icon: false
+                show_state: true
+          - type: custom:bubble-card
+            card_type: button
+            button_type: slider
+            entity: input_number.gardena_2
+            name: Timer 2
+            sub_button:
+              - entity: input_number.gardena_2
+                show_icon: false
+                show_state: true
+                show_background: false
+          - type: custom:bubble-card
+            card_type: button
+            button_type: slider
+            entity: input_number.gardena_3
+            name: Timer 3
+            sub_button:
+              - entity: input_number.gardena_3
+                show_icon: false
+                show_state: true
+                show_background: false
+          - type: custom:bubble-card
+            card_type: button
+            button_type: slider
+            entity: input_number.gardena_4
+            name: Timer 4
+            sub_button:
+              - entity: input_number.gardena_4
+                show_icon: false
+                show_state: true
+                show_background: false
+          - type: custom:bubble-card
+            card_type: separator
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.gardena_water_computer_offen
+            icon: mdi:water-pump
+            sub_button:
+              - entity: number.gardena_water_computer_verbleibende_offene_zeit
+                show_background: false
+                show_icon: false
+                show_state: true
+                show_name: false
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.gardena_water_computer_offen
+        name: Garten gießen
+        icon: mdi:flower
+        tap_action:
+          action: navigate
+          navigation_path: '#garten'
+        button_action:
+          tap_action:
+            action: navigate
+            navigation_path: '#garten'
+        sub_button:
+          - entity: counter.gardena_open_counter
+            show_icon: false
+            show_state: true
+            show_background: false
+            name: Ventil
+            show_name: true
+            tap_action:
+              action: none
+          - entity: number.gardena_water_computer_verbleibende_offene_zeit
+            show_background: false
+            show_icon: false
+            show_state: true
+            tap_action:
+              action: none
+            name: ''
+            show_name: false
